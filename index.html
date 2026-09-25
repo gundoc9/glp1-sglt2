@@ -31,7 +31,7 @@ html,body{background:var(--ground);color:var(--ink);font-family:"Heros",Helvetic
 body{min-height:100vh}
 a{color:inherit}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.app{margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;position:relative}
+.app{max-width:780px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;position:relative}
 .screen{display:none;flex-direction:column;flex:1;min-height:100vh;min-height:100dvh}
 .screen.on{display:flex}
 .cn{font-family:"HerosCn","Heros",Helvetica,Arial,sans-serif}
@@ -40,8 +40,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webki
 /* head */
 .head{padding:10px 16px 5px;text-align:center}
 .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-.eyebrow{font:700 13px "HerosCn",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
-.count{font:400 13px "HerosCn",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.eyebrow{font:400 11.5px "HerosCn",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.count{font:400 11.5px "HerosCn",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
 .count b{font-weight:700;color:var(--ink)}
 h1{font:700 var(--h1)/1.05 "Heros",sans-serif;letter-spacing:-.01em;margin-bottom:5px}
 .detail{font-size:var(--detail);line-height:1.32;color:var(--ink2);margin-bottom:5px;text-wrap:balance}
@@ -53,7 +53,7 @@ h1{font:700 var(--h1)/1.05 "Heros",sans-serif;letter-spacing:-.01em;margin-botto
 .split::after{content:"";position:absolute;right:0;top:0;bottom:0;width:50%;background:var(--ukbg)}
 .heroes{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:0 10px;padding:8px 10px 6px}
 .heroes .divider{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--ink);opacity:.45}
-.hero{text-align:center;min-width:0;cursor:pointer}
+.hero{text-align:center;min-width:0}
 .block{border-radius:4px;padding:8px 6px 7px}
 .hero.us .block{background:var(--us);color:#fff}
 .hero.uk .block{background:var(--uk);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
@@ -83,9 +83,7 @@ h1{font:700 var(--h1)/1.05 "Heros",sans-serif;letter-spacing:-.01em;margin-botto
 .pill:active{background:#2C3338}
 .under{display:flex;gap:4px}
 .under .c{width:var(--uChipW);height:var(--uChipH);font-size:var(--uChipFs)}
-.legend{margin:10px var(--pad) 0;text-align:center;font:400 12px "HerosCn",sans-serif;letter-spacing:.03em;color:var(--ink2);line-height:1.4}
-.refhint{display:none}
-.d1 .refhint{display:inline}
+.legend{margin:10px var(--pad) 0;text-align:center;font:400 11px "HerosCn",sans-serif;letter-spacing:.04em;color:var(--ink2);line-height:1.4}
 .key{display:grid;grid-template-columns:1fr 1fr;gap:5px 10px;padding:7px var(--pad) 0}
 .key span{display:flex;align-items:center;gap:7px;font:400 12px "Heros",sans-serif;color:var(--ink2)}
 .key .c{width:22px;height:15px;font-size:0}
@@ -100,8 +98,7 @@ h1{font:700 var(--h1)/1.05 "Heros",sans-serif;letter-spacing:-.01em;margin-botto
 /* cover */
 .cover{padding:0 0 8px}
 .band{background:var(--us);color:#fff;padding:16px 18px 14px;text-align:left}
-.band .eyebrow{color:#D4E6DA;font-weight:700}
-.rest{display:flex;flex-direction:column;flex:1}
+.band .eyebrow{color:#D4E6DA}
 .band h1{font-size:29px;line-height:1.04;margin:7px 0 8px;text-wrap:balance}
 .band p{font-size:14px;line-height:1.4;color:#E8F1EB;text-wrap:pretty}
 .cyl{display:flex;justify-content:center;gap:34px;padding:12px 0 2px}
@@ -189,18 +186,6 @@ tr.sec td{background:var(--ground);font:700 10.5px "HerosCn",sans-serif;letter-s
 .msg{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 14px;border-radius:4px;font-size:13px;z-index:30;display:none;max-width:90vw;text-align:center}
 .msg.on{display:block}
 
-/* phone density steps, applied by script when the question does not fit the screen */
-.d1 .hero .sub{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.d2{--rowH:44px;--chipH:26px;--uChipH:19px;--detail:13px}
-.d2 .head{padding-top:7px} .d2 .top{margin-bottom:6px} .d2 .legend{margin-top:6px} .d2 .key{padding-top:5px} .d2 .foot{padding:6px 16px 10px} .d2 .heroes{padding:6px 10px 5px}
-.d3{--rowH:40px;--chipH:24px;--chipFs:14px;--big:38px;--h1:24px}
-.d3 .sample{display:none} .d3 .block{padding:6px 6px 5px} .d3 .hero .sub{-webkit-line-clamp:1} .d3 .key{display:none} .d3 .legend{font-size:11px}
-.d4{--rowH:38px;--chipH:23px;--uChipH:18px;--big:34px;--h1:22px;--detail:12.5px;--ask:14px}
-.d4 .heroes{padding:6px 8px 6px} .d4 .head{padding-top:6px} .d4 .top{margin-bottom:4px} .d4 h1{margin-bottom:3px} .d4 .detail{margin-bottom:4px} .d4 .legend{margin-top:5px;line-height:1.3} .d4 .foot{padding:4px 16px 8px} .d4 .pill{padding:3px 8px 2px}
-.d5 .hero .sub{display:none} .d5{--rowH:36px;--chipH:22px}
-@media (min-width:420px) and (max-width:699px){
-  :root{--chipW:40px;--chipH:30px;--chipFs:16px;--uChipW:32px;--uChipH:22px;--mid:94px;--rowH:52px}
-}
 @media (min-width:700px){
   :root{--chipW:46px;--chipH:34px;--chipFs:18px;--uChipW:38px;--uChipH:26px;--uChipFs:15px;--rowH:66px;--mid:120px;--big:60px;--pad:24px;--h1:36px;--detail:16px;--ask:18px;--sub:12.5px}
   .head{padding:22px 32px 10px}
@@ -234,29 +219,6 @@ tr.sec td{background:var(--ground);font:700 10.5px "HerosCn",sans-serif;letter-s
   .gridnote{font-size:13px}
   .empty{font-size:15px}
 }
-@media (min-width:900px){
-  :root{--rowH:62px;--mid:130px;--pad:0px}
-  #s-q.on{display:grid;grid-template-columns:minmax(320px,36%) minmax(0,1fr);grid-template-rows:auto auto auto 1fr;grid-template-areas:"head split" "legend split" "key split" "foot split";column-gap:32px;padding:26px 36px 20px;align-content:center;max-width:1500px;width:100%;margin:0 auto}
-  #s-q .head{grid-area:head;text-align:left;padding:0}
-  #s-q .top{margin-bottom:14px}
-  #s-q h1{font-size:38px;margin-bottom:10px}
-  #s-q .detail{font-size:17px;line-height:1.4;margin-bottom:10px;text-wrap:pretty}
-  #s-q .ask{font-size:20px;line-height:1.3;text-wrap:pretty}
-  #s-q .split{grid-area:split;margin:0;align-self:start}
-  #s-q .legend{grid-area:legend;text-align:left;margin:22px 0 0;font-size:13.5px;max-width:520px}
-  #s-q .key{grid-area:key;padding:10px 0 0;justify-content:flex-start}
-  #s-q .foot{grid-area:foot;align-self:start;margin-top:0;padding:28px 0 0;max-width:520px}
-  #s-q .empty{padding:30px 20px}
-  #s-cover.on{display:grid;grid-template-columns:46% 1fr;grid-template-areas:"band rest";width:100%;max-width:1500px;margin:0 auto}
-  #s-cover .band{grid-area:band;display:flex;flex-direction:column;justify-content:center;padding:56px 56px}
-  #s-cover .band h1{font-size:52px}
-  #s-cover .band p{font-size:19px;max-width:520px}
-  #s-cover .rest{grid-area:rest;justify-content:center;padding:28px 40px 20px;max-width:640px;width:100%;margin:0 auto}
-  #s-cover .credit{margin-top:28px}
-  #s-grid .head,#s-grid .gridwrap,#s-grid .gridnote,#s-grid .foot{max-width:1100px;width:100%;margin-left:auto;margin-right:auto}
-  #s-grid .gridwrap{margin-top:12px}
-  .sheet .in{max-width:900px}
-}
 </style>
 </head>
 <body>
@@ -270,7 +232,6 @@ tr.sec td{background:var(--ground);font:700 10.5px "HerosCn",sans-serif;letter-s
       <h1>GLP-1 agonists and SGLT2 inhibitors before surgery</h1>
       <p>Twelve questions put to six AI models, three times each. Every answer is placed by whose guidance the model named: US on the left, UK on the right, and checked against the 2025 and 2026 references.</p>
     </div>
-    <div class="rest">
     <div class="cyl">
       <div>
         <svg width="40" height="106" viewBox="0 0 74 196" aria-label="US oxygen cylinder, green">
@@ -301,7 +262,6 @@ tr.sec td{background:var(--ground);font:700 10.5px "HerosCn",sans-serif;letter-s
     <div class="hint">Swipe, or use the arrows at the foot, to move between questions.</div>
     <div class="coverlinks"><button data-act="sources">Sources</button><button data-act="grid">All twelve</button></div>
     <div class="credit"><b>Dr Ganesh Sivasankara · MD · FRCA · FCARCSI · Consultant Anaesthetist</b><br>Answers are what six models said on the run date. They are not advice. Check the references before acting on anything here.</div>
-    </div>
   </div>
 
   <!-- question -->
@@ -519,8 +479,8 @@ function renderCover(){
 function renderQ(){
   const q = QS[idx]; const n = idx+1;
   const heroes = `<div class="heroes"><div class="divider"></div>
-    <div class="hero us" data-act="refs"><div class="block"><div class="tag">US guidance</div><div class="num${isWord(q.us.big)?' word':''}">${dashify(q.us.big)}</div><div class="unit">${esc(q.us.small)}</div></div><div class="sub">${q.us.sub}</div></div>
-    <div class="hero uk" data-act="refs"><div class="block"><div class="tag">UK guidance</div><div class="num${isWord(q.uk.big)?' word':''}">${dashify(q.uk.big)}</div><div class="unit">${esc(q.uk.small)}</div></div><div class="sub">${q.uk.sub}</div></div>
+    <div class="hero us"><div class="block"><div class="tag">US guidance</div><div class="num${isWord(q.us.big)?' word':''}">${dashify(q.us.big)}</div><div class="unit">${esc(q.us.small)}</div></div><div class="sub">${q.us.sub}</div></div>
+    <div class="hero uk"><div class="block"><div class="tag">UK guidance</div><div class="num${isWord(q.uk.big)?' word':''}">${dashify(q.uk.big)}</div><div class="unit">${esc(q.uk.small)}</div></div><div class="sub">${q.uk.sub}</div></div>
   </div>`;
   let rows = '';
   let tagline = '';
@@ -548,7 +508,7 @@ function renderQ(){
       <div class="ask">${esc(q.ask)}</div>
     </div>
     <div class="split">${heroes}${tagline}${rows}</div>
-    <div class="legend">One answer per run, three runs per model. Left: the model named US guidance. Right: UK. Under the name: it named none, or guidance from elsewhere. ${unitLine}${RUN?' Tap a model’s name to read its three answers.':''}<span class="refhint"> Tap a reference block for its sources.</span></div>
+    <div class="legend">One answer per run, three runs per model. Left: the model named US guidance. Right: UK. Under the name: it named none, or guidance from elsewhere. ${unitLine}${RUN?' Tap a model’s name to read its three answers.':''}</div>
     <div class="key row4">
       <span><span class="c us"></span>US</span>
       <span><span class="c uk"></span>UK</span>
@@ -623,20 +583,6 @@ function sheetModel(mi){
   }
   openSheet(`<div class="sh"><h2>${esc(m.name)}</h2><button class="close" data-act="close">Close</button></div><div class="mid">${esc(m.id)} · question ${idx+1}: ${esc(q.title)}</div>${cards}<p class="note" style="font-size:12px;color:var(--ink3);line-height:1.45;margin-top:4px">Sources are as the model wrote them. Some do not exist; none were checked by the page.</p>`);
 }
-function sheetRefs(){
-  const q = QS[idx];
-  const blk = (side, r) => `<div class="runcard"><div class="rh"><span class="c ${side==='US'?'us':'uk'}">${side} guidance</span><span class="val">${esc(r.big)}</span></div><p><b>${esc(r.small)}</b></p><p>${r.sub}</p></div>`;
-  openSheet(`<div class="sh"><h2>References</h2><button class="close" data-act="close">Close</button></div><div class="mid">question ${idx+1}: ${esc(q.title)}</div>${blk('US', q.us)}${blk('UK', q.uk)}<p class="note" style="font-size:12px;color:var(--ink3);line-height:1.45;margin-top:4px">The author’s reading of the documents in September 2026; the full list is under Sources.</p>`);
-}
-function fitQ(){
-  const s = $('#s-q'); if(!s.classList.contains('on')) return;
-  s.classList.remove('d1','d2','d3','d4','d5');
-  if(window.innerWidth >= 900) return;
-  const fits = () => document.documentElement.scrollHeight <= window.innerHeight + 1;
-  for(const lvl of ['d1','d2','d3','d4','d5']){ if(fits()) break; s.classList.add(lvl); }
-}
-window.addEventListener('resize', fitQ);
-window.addEventListener('orientationchange', () => setTimeout(fitQ, 150));
 function sheetSources(){
   const groups = {US:'US guidance', UK:'UK guidance', Other:'Other guidance and commentary'};
   let html = `<div class="sh"><h2>Sources</h2><button class="close" data-act="close">Close</button></div><ul class="srcs">`;
@@ -647,7 +593,7 @@ function sheetSources(){
 }
 
 // ---------- navigation ----------
-function go(i){ idx = Math.max(0, Math.min(11, i)); renderQ(); show('s-q'); fitQ(); }
+function go(i){ idx = Math.max(0, Math.min(11, i)); renderQ(); show('s-q'); }
 function next(){ if(idx>=11){ renderGrid(); show('s-grid'); } else go(idx+1); }
 function prev(){ if(idx<=0){ renderCover(); show('s-cover'); } else go(idx-1); }
 
@@ -663,7 +609,6 @@ document.addEventListener('click', function(ev){
   else if(act==='goto'){ go(parseInt(t.getAttribute('data-qi'),10)); }
   else if(act==='model'){ if(RUN) sheetModel(parseInt(t.getAttribute('data-mi'),10)); }
   else if(act==='sources'){ sheetSources(); }
-  else if(act==='refs'){ sheetRefs(); }
   else if(act==='close'){ closeSheet(); }
   else if(act.startsWith('su-')){ setupAction(act.slice(3), t); }
 });
