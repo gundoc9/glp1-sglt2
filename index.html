@@ -92,7 +92,7 @@ h1{font:700 var(--h1)/1.05 "Heros",sans-serif;letter-spacing:-.01em;margin-botto
 .foot{margin-top:auto;padding:10px 16px 14px;display:flex;justify-content:space-between;align-items:center;font:400 11px "HerosCn",sans-serif;letter-spacing:.04em;color:var(--ink3)}
 .foot .nav{font:700 12px "HerosCn",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding:12px 6px}
 .foot .nav[disabled]{opacity:.3}
-.foot .links a,.foot .links button{color:var(--ink2);text-decoration:none;font:700 11px "HerosCn",sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:0 6px;padding:8px 2px}
+.foot .links a,.foot .links button{color:var(--ink2);text-decoration:none;font:700 11px "HerosCn",sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:0 6px;padding:13px 2px}
 .tapline{margin:8px var(--pad) 0;text-align:center;font:400 11px "HerosCn",sans-serif;letter-spacing:.04em;color:var(--ink3)}
 .empty{position:relative;z-index:2;text-align:center;padding:14px 12px 16px;font-size:13px;line-height:1.4;color:var(--ink2)}
 
@@ -356,17 +356,17 @@ tr.sec td{background:var(--ground);font:700 10.5px "HerosCn",sans-serif;letter-s
 <script>
 // Twelve questions, with the US and UK reference lines. Links point at the sources sheet entries.
 const SOURCES = {
-  fda:     {n:'FDA label change 2020', t:'US Food and Drug Administration. SGLT2 inhibitor labels: temporary discontinuation before scheduled surgery (canagliflozin, dapagliflozin, empagliflozin at least 3 days; ertugliflozin at least 4 days). March 2020 update.', u:'https://www.fda.gov/drugs/drug-safety-and-availability/fda-revises-labels-sglt2-inhibitors-diabetes-include-warnings-about-too-much-acid-blood-and-serious', side:'US'},
-  ada:     {n:'ADA 2026', t:'American Diabetes Association. Diabetes care in the hospital: Standards of Care in Diabetes 2026, section 16. Diabetes Care 2026; 49 (Suppl 1): S339-55.', u:'https://doi.org/10.2337/dc26-S016', side:'US'},
-  accaha:  {n:'ACC/AHA 2024', t:'Thompson A, et al. 2024 AHA/ACC guideline for perioperative cardiovascular management for noncardiac surgery. J Am Coll Cardiol 2024. SGLT2 inhibitors held 3 to 4 days before surgery (Class 1).', u:'https://doi.org/10.1016/j.jacc.2024.06.013', side:'US'},
+  fda:     {n:'FDA label change 2020', t:'US Food and Drug Administration. SGLT2 inhibitor prescribing information revised in March 2020: temporary discontinuation before scheduled surgery (canagliflozin, dapagliflozin, empagliflozin at least 3 days; ertugliflozin at least 4 days). The FDA safety communication page has since been taken down; the link is the current dapagliflozin label, section 2.4.', u:'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=72ad22ae-efe6-4cd6-a302-98aaee423d69', side:'US'},
+  ada:     {n:'ADA 2026', t:'American Diabetes Association. Diabetes care in the hospital: Standards of Care in Diabetes 2026, section 16. Diabetes Care 2026; 49 (Suppl 1): S339-55. The 3 to 4 day hold is in the section text, not a numbered recommendation.', u:'https://doi.org/10.2337/dc26-S016', side:'US'},
+  accaha:  {n:'ACC/AHA 2024', t:'Thompson A, Fleischmann KE, Smilowitz NR, et al. 2024 AHA/ACC guideline for perioperative cardiovascular management for noncardiac surgery. J Am Coll Cardiol 2024; 84: 1869-969. SGLT2 inhibitors discontinued 3 to 4 days before surgery (Class 1, level of evidence C-LD).', u:'https://doi.org/10.1016/j.jacc.2024.06.013', side:'US'},
   spaqi26: {n:'SPAQI 2026', t:'Oprea AD, Mohamed B, Hepner DL, et al. Perioperative management of patients taking sodium-glucose cotransporter 2 inhibitors: SPAQI multidisciplinary consensus statement. Br J Anaesth 2026; 136: 1776-99.', u:'https://doi.org/10.1016/j.bja.2026.02.031', side:'US'},
   spaqi25: {n:'SPAQI 2025', t:'Oprea AD, Ostapenko LJ, Sweitzer B, et al. Perioperative management of patients taking glucagon-like peptide 1 receptor agonists: SPAQI multidisciplinary consensus statement. Br J Anaesth 2025; 135: 48-78.', u:'https://doi.org/10.1016/j.bja.2025.04.001', side:'US'},
   multi24: {n:'Multisociety 2024', t:'Kindel TL, Wang AY, Wadhwa A, et al. Multi-society clinical practice guidance for the safe use of glucagon-like peptide-1 receptor agonists in the perioperative period (AGA, ASMBS, ASA, ISPCOP, SAGES). Surg Endosc 2024; also Clin Gastroenterol Hepatol 2024.', u:'https://doi.org/10.1007/s00464-024-11263-2', side:'US'},
   asa23:   {n:'ASA 2023', t:'Joshi GP, et al. American Society of Anesthesiologists consensus-based guidance on preoperative management of patients (adults and children) on GLP-1 receptor agonists. 29 June 2023.', u:'https://www.asahq.org/about-asa/newsroom/news-releases/2023/06/american-society-of-anesthesiologists-consensus-based-guidance-on-preoperative', side:'US'},
-  uk25:    {n:'Consensus 2025', t:'El-Boghdadly K, Dhesi J, Fabb P, et al. Elective peri-operative management of adults taking GLP-1 receptor agonists, GIP agonists and SGLT2 inhibitors: a multidisciplinary consensus statement (Association of Anaesthetists, ABCD, BOMSS, CPOC, JBDS-IP, RCoA, SOBA). Anaesthesia 2025; 80: 412-24.', u:'https://doi.org/10.1111/anae.16541', side:'UK'},
+  uk25:    {n:'Consensus 2025', t:'El-Boghdadly K, Dhesi J, Fabb P, et al. Elective peri-operative management of adults taking GLP-1 receptor agonists, GIP agonists and SGLT2 inhibitors: a multidisciplinary consensus statement (Association of Anaesthetists, ABCD, BOMSS, CPOC, JBDS-IP, RCoA, SOBA, UKCPA). Anaesthesia 2025; 80: 412-24.', u:'https://doi.org/10.1111/anae.16541', side:'UK'},
   dhat26:  {n:'Dhatariya 2026', t:'Dhatariya K, Levy NA, El-Boghdadly K. Peri-operative management of patients who have not stopped sodium-glucose co-transporter-2 inhibitors. Anaesthesia 2026 (correspondence).', u:'https://doi.org/10.1111/anae.70356', side:'UK'},
   mhra16:  {n:'MHRA 2016', t:'Medicines and Healthcare products Regulatory Agency. SGLT2 inhibitors: updated advice on the risk of diabetic ketoacidosis. Drug Safety Update, April 2016.', u:'https://www.gov.uk/drug-safety-update/sglt2-inhibitors-updated-advice-on-the-risk-of-diabetic-ketoacidosis', side:'UK'},
-  anz25:   {n:'ANZ 2025', t:'ADS/ANZCA/GESA/NACOS clinical practice recommendations on the peri-procedural use of GLP-1/GIP receptor agonists. Anaesth Intensive Care 2025.', u:'https://doi.org/10.1177/0310057X251355288', side:'Other'},
+  anz25:   {n:'ANZ 2025', t:'Hocking SL, Scott DA, Remedios ML, et al. 2025 ADS/ANZCA/GESA/NACOS clinical practice recommendations on the peri-procedural use of GLP-1/GIP receptor agonists. Anaesth Intensive Care 2025; 53: 300-6.', u:'https://doi.org/10.1177/0310057X251355288', side:'Other'},
   lam26:   {n:'Lam 2026', t:'Lam C, Thiruvenkatarajan V, Nanjappa N, Endlich Y, Lin DY. Perioperative management of GLP-1 receptor agonists: international guidance and variability in recommendations. Br J Anaesth 2026; 136: 1682-5.', u:'https://doi.org/10.1016/j.bja.2026.01.028', side:'Other'},
   garcia26:{n:'García 2026', t:'García B, Dixit AA, Legrand M. Balancing the evidence with the SPAQI recommendations: from perioperative discontinuation towards continuation of SGLT2 inhibitors. Br J Anaesth 2026; 137: 413-9.', u:'https://doi.org/10.1016/j.bja.2026.05.005', side:'Other'},
 };
@@ -384,14 +384,14 @@ const QUESTIONS = [
     detail:'Adult with obesity, no diabetes. Tirzepatide started six weeks ago, dose increased to 7.5 mg two weeks ago, no symptoms. Elective laparoscopic cholecystectomy next week.',
     ask:'How many hours of clear fluids only should the patient take before surgery, on top of the usual fast? 0 means the usual fast.',
     kind:'number', unit:'hours', zero:'0 means the usual fast',
-    us:{big:'24', small:'hours on liquids only', sub:`Dose escalation counts as higher risk: a liquid diet for at least 24 h before the procedure. ${S('multi24')}. ${S('spaqi25')}: no solids for 24 h for every patient on these drugs.`},
+    us:{big:'24', small:'hours on liquids only', sub:`Dose escalation counts as higher risk: a liquid diet for at least 24 h before the procedure. ${S('multi24')}. ${S('spaqi25')}: no solids for 24 h for every symptom-free patient on these drugs.`},
     uk:{big:'0', small:'usual fasting only', sub:`Standard fasting, no liquid diet advised. Consider gastric ultrasound and airway precautions. ${S('uk25')}.`} },
 
   { id:'q3', sec:'glp', eyebrow:'GLP-1 agonist', short:'Nausea, vomiting', title:'Nausea and vomiting',
     detail:'Adult on weekly semaglutide 2.4 mg for obesity. Vomited twice yesterday and feels bloated this morning. Fasted correctly. Elective hernia repair listed for today.',
     ask:'Should the operation be postponed? Answer yes, no, or depends.',
     kind:'stance', unit:'', zero:'',
-    us:{big:'Yes', small:'or a full-stomach plan', sub:`Delay the elective procedure while symptoms are active (${S('asa23')}); ${S('multi24')} allows going ahead with rapid sequence induction if retained contents are suspected.`},
+    us:{big:'Yes', small:'or a full-stomach plan', sub:`Delay the elective procedure while symptoms are active (${S('asa23')}); ${S('multi24')} allows going ahead with rapid sequence induction if retained contents are suspected. ${S('spaqi25')}: with significant symptoms, refer back to the prescriber before an elective procedure.`},
     uk:{big:'Depends', small:'assess, scan', sub:`Symptoms alone should not decide gastric content: individual risk assessment, gastric ultrasound and airway precautions. ${S('uk25')}.`} },
 
   { id:'q4', sec:'glp', eyebrow:'GLP-1 agonist', short:'If held', title:'Surgeon wants it held',
@@ -419,21 +419,21 @@ const QUESTIONS = [
     detail:'Type 2 diabetes, no heart failure or kidney disease. Empagliflozin 10 mg each morning. Cataract surgery under local anaesthetic with light sedation, first on the 8 am list; evening meal at 9 pm.',
     ask:'How many days before surgery should the last dose be? 0 means continue as usual.',
     kind:'number', unit:'days', zero:'0 means continue',
-    us:{big:'3', small:'label; SPAQI 2026: continue', sub:`${S('fda')}: at least 3 days before any scheduled surgery. ${S('spaqi26')}: continue before minor surgery when the carbohydrate fast is under 12 h, with or without diabetes.`},
+    us:{big:'3', small:'label 3, SPAQI 2026: 0', sub:`${S('fda')}: withhold for at least 3 days before surgery, if possible. ${S('spaqi26')}: continue before minor surgery when the carbohydrate fast is under 12 h, with or without diabetes.`},
     uk:{big:'2', small:'days before', sub:`Omit the day before and the day of any procedure. ${S('uk25')}.`} },
 
   { id:'q8', sec:'sglt', eyebrow:'SGLT2 inhibitor', short:'Major surgery', title:'Major surgery',
     detail:'Type 2 diabetes, no heart failure or kidney disease. Dapagliflozin 10 mg each morning. Elective hip replacement.',
     ask:'How many days before surgery should the last dose be?',
     kind:'number', unit:'days', zero:'0 means continue',
-    us:{big:'3-4', small:'label, ADA, ACC/AHA; SPAQI: may continue', sub:`${S('fda')} 3 days (4 for ertugliflozin), ${S('ada')} and ${S('accaha')} 3 to 4. ${S('spaqi26')}: consider continuing when the carbohydrate fast is under 12 h and no long fast is expected after surgery; 3 days if one is.`},
+    us:{big:'3-4', small:'label, ADA, ACC/AHA; SPAQI 2026: 0 if the fast is short', sub:`${S('fda')} 3 days (4 for ertugliflozin), ${S('ada')} and ${S('accaha')} 3 to 4. ${S('spaqi26')}: consider continuing when the carbohydrate fast is under 12 h and no long fast is expected after surgery; 3 days if one is.`},
     uk:{big:'2', small:'days before', sub:`Omit the day before and the day of surgery: at least 48 h with a morning dose. ${S('uk25')}.`} },
 
   { id:'q9', sec:'sglt', eyebrow:'SGLT2 inhibitor', short:'Heart failure, no diabetes', title:'Heart failure, no diabetes',
     detail:'Adult with heart failure and reduced ejection fraction, no diabetes. Dapagliflozin 10 mg each morning for the heart. Elective laparoscopic hernia repair as a day case.',
     ask:'How many days before surgery should the last dose be? 0 means continue as usual.',
     kind:'number', unit:'days', zero:'0 means continue',
-    us:{big:'3-4', small:'label, ACC/AHA; SPAQI: continue', sub:`${S('fda')} and ${S('accaha')}: hold 3 to 4 days whether or not there is diabetes. ${S('spaqi26')}: without diabetes, continue for minor or major surgery unless a carbohydrate fast over 12 h or a very low-carbohydrate diet is expected.`},
+    us:{big:'3-4', small:'label, ACC/AHA; SPAQI 2026: 0', sub:`${S('fda')} and ${S('accaha')}: hold 3 to 4 days whether or not there is diabetes. ${S('spaqi26')}: without diabetes, continue for minor or major surgery unless a carbohydrate fast over 12 h or a very low-carbohydrate diet is expected.`},
     uk:{big:'2', small:'days before', sub:`Omit the day before and the day of any procedure, whatever the indication. ${S('uk25')}.`} },
 
   { id:'q10', sec:'sglt', eyebrow:'SGLT2 inhibitor', short:'Forgot to stop', title:'Took it this morning',
@@ -441,13 +441,13 @@ const QUESTIONS = [
     ask:'Above what capillary blood ketone level, in mmol/L, should the operation be postponed?',
     kind:'number', unit:'mmol/L', zero:'',
     us:{big:'None', small:'postpone only for ketoacidosis', sub:`${S('spaqi26')} sets no ketone cut-off: proceed with monitoring during and after surgery, dextrose and insulin if ketosis appears, unless ketoacidosis is found first. Its definition: ketones of 3.0 mmol/L or more with pH 7.3 or below, bicarbonate 18 or below, or an anion gap over 10.`},
-    uk:{big:'3.0', small:'mmol/L: DKA cut-off, 2026 letter', sub:`Postpone with ketones of 3.0 mmol/L or more, pH below 7.3 or bicarbonate below 18. Starvation ketosis with a normal gas: dextrose, then proceed. ${S('dhat26')}.`} },
+    uk:{big:'3.0', small:'mmol/L: DKA cut-off, 2026 letter', sub:`Postpone with ketones of 3.0 mmol/L or more, pH below 7.3 or bicarbonate below 18. Starvation ketosis with a normal gas: dextrose, then proceed. Provisos: a fast under 24 h, ketone monitoring to hand, and not major surgery in its text, though its flowchart says major surgery. ${S('dhat26')}.`} },
 
   { id:'q11', sec:'sglt', eyebrow:'SGLT2 inhibitor', short:'Day-case restart', title:'Restart after a day case',
     detail:'Type 2 diabetes on empagliflozin, stopped correctly before a day-case knee arthroscopy. Home the same evening, eating and drinking normally.',
     ask:'How many hours after surgery should the drug restart?',
     kind:'number', unit:'hours', zero:'',
-    us:{big:'None', small:'when intake is back to normal', sub:`${S('fda')}: restart once oral intake is back to baseline and other ketoacidosis risks have gone. ${S('spaqi26')}: after normal oral intake resumes.`},
+    us:{big:'None', small:'when intake is back to normal', sub:`${S('fda')}: restart once oral intake is back to baseline and other ketoacidosis risks have gone. ${S('spaqi26')}: after normal oral intake resumes. ${S('accaha')}: no clear guidance, once stable and eating normally.`},
     uk:{big:'24-48', small:'hours after surgery', sub:`Day cases: restart once eating and drinking normally, usually 24 to 48 h after surgery. ${S('uk25')}.`} },
 
   { id:'q12', sec:'sglt', eyebrow:'SGLT2 inhibitor', short:'Liver-reduction diet', title:'Liver-reduction diet',
@@ -593,7 +593,7 @@ function renderQ(){
     </div>
     <div class="foot">
       <button class="nav" data-act="prev">‹ Back</button>
-      <div class="links"><button data-act="sources">Sources</button><button data-act="cover">Cover</button></div>
+      <div class="links"><button data-act="sources">Sources</button><button data-act="grid">All twelve</button><button data-act="cover">Cover</button></div>
       <button class="nav" data-act="next">${idx===11?'All twelve':'Next'} ›</button>
     </div>`;
 }
