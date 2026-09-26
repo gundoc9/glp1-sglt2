@@ -43,6 +43,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webki
 .eyebrow{font:400 11.5px "HerosCn",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
 .count{font:400 11.5px "HerosCn",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
 .count b{font-weight:700;color:var(--ink)}
+.top .eyebrow{font-weight:700;color:var(--ink)}
 h1{font:700 var(--h1)/1.05 "Heros",sans-serif;letter-spacing:-.01em;margin-bottom:5px}
 .detail{font-size:var(--detail);line-height:1.32;color:var(--ink2);margin-bottom:5px;text-wrap:balance}
 .ask{font-weight:700;font-size:var(--ask);line-height:1.3;text-wrap:balance}
@@ -147,18 +148,29 @@ tr.sec td{background:var(--ground);font:700 10.5px "HerosCn",sans-serif;letter-s
 .sheet .sh .close{font:700 11px "HerosCn",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);padding:8px 4px}
 .sheet .mid{font:400 11px "HerosCn",sans-serif;letter-spacing:.06em;color:var(--ink3);margin-bottom:10px;word-break:break-all}
 .runcard{border:1px solid var(--rule);border-radius:4px;background:#fff;padding:10px 12px;margin-bottom:10px}
-.runcard .rh{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.runcard .rh .rn{font:700 11px "HerosCn",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
-.runcard .rh .val{font:700 20px "Heros",sans-serif}
+.runcard .rh{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+.runcard .rh .rn{font:700 11px "HerosCn",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);white-space:nowrap}
+.runcard .rh .val{font:700 20px "Heros",sans-serif;white-space:nowrap}
 .runcard .rh .c{width:auto;min-width:36px;padding:0 8px;height:22px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-family:"HerosCn",sans-serif}
 .runcard p{font-size:13px;line-height:1.4;color:var(--ink2);margin-top:4px}
 .runcard p b{color:var(--ink);font-weight:700}
 .runcard .st{font:400 11px "HerosCn",sans-serif;letter-spacing:.04em;color:var(--fail);margin-top:4px}
+.srcgrid,.srccol{display:flex;flex-direction:column;gap:10px}
+.srcgroup{border-radius:4px;padding:10px 12px 3px;border:1px solid var(--rule)}
+.srcgroup.us{background:var(--usbg);border-color:#B4C5BE}
+.srcgroup.uk{background:#fff}
+.srcgroup.other{background:#E3E6E9}
+.gtag{display:inline-block;border-radius:3px;padding:5px 9px 4px;font:700 10px "HerosCn",sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:2px}
+.srcgroup.us .gtag{background:var(--us);color:#fff}
+.srcgroup.uk .gtag{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.srcgroup.other .gtag{background:var(--none);color:var(--ink);box-shadow:inset 0 0 0 1px var(--noneEdge)}
 .srcs{list-style:none}
-.srcs li{padding:8px 0;border-bottom:1px solid #DDE1E4;font-size:13px;line-height:1.4;color:var(--ink2)}
+.srcs li{padding:8px 0;border-bottom:1px solid rgba(18,21,23,.14);font-size:13px;line-height:1.4;color:var(--ink2)}
+.srcs li:last-child{border-bottom:0}
 .srcs li b{display:block;color:var(--ink);font-weight:700}
-.srcs li a{color:var(--ink);text-decoration:underline;text-decoration-color:#9AA3A8;text-underline-offset:2px;word-break:break-all;font-size:12px}
-.srcs h3{font:700 11px "HerosCn",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin:14px 0 2px}
+.srcs li a{color:var(--ink);text-decoration:underline;text-decoration-color:#7E878C;text-underline-offset:2px;word-break:break-all;font-size:12px}
+.sheetnote{font-size:12px;color:var(--ink3);line-height:1.45;margin-top:10px}
+.runcards{display:flex;flex-direction:column}
 
 /* setup */
 .setup{padding:12px 16px 40px;max-width:720px;margin:0 auto;width:100%}
@@ -218,6 +230,69 @@ tr.sec td{background:var(--ground);font:700 10.5px "HerosCn",sans-serif;letter-s
   th.m button{font-size:13px}
   .gridnote{font-size:13px}
   .empty{font-size:15px}
+  body[data-screen="s-grid"] .app{max-width:1200px}
+  .sheet{left:50%;right:auto;top:50%;bottom:auto;transform:translate(-50%,-50%);width:min(1120px,calc(100vw - 48px));max-height:88vh;border-radius:8px;box-shadow:0 14px 48px rgba(0,0,0,.30);padding-bottom:0}
+  .sheet .in{max-width:none;padding:14px 28px 28px}
+  .sheet .sh{padding:8px 0 10px;margin-bottom:12px}
+  .sheet .sh h2{font-size:26px}
+  .sheet .sh .close{font-size:13px}
+  .sheet .mid{font-size:13px;margin-bottom:14px}
+  .srcgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .srccol{gap:16px}
+  .srcgroup{padding:14px 16px 6px}
+  .gtag{font-size:12px;padding:6px 11px 5px;margin-bottom:4px}
+  .srcs li{font-size:15px;padding:10px 0}
+  .srcs li a{font-size:13.5px}
+  .sheetnote{font-size:13.5px;margin-top:16px}
+  .runcard{padding:14px 16px;margin-bottom:14px}
+  .runcard .rh{gap:8px 12px;margin-bottom:8px}
+  .runcard .rh .rn{font-size:12px}
+  .runcard .rh .val{font-size:24px}
+  .runcard .rh .c{font-size:12px;height:24px;min-width:40px}
+  .runcard p{font-size:15px;line-height:1.45;margin-top:6px}
+  .runcard .st{font-size:12.5px}
+}
+@media (min-width:900px){
+  .runcards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+  .runcards .runcard{margin-bottom:0}
+}
+@media (min-width:1000px){
+  .gridwrap{margin:16px 32px 0}
+  th.q{width:300px}
+  th.m{height:66px;padding-bottom:8px}
+  th.m button{font-size:14px}
+  td.q{padding:6px 8px 6px 12px}
+  td.q .n{font-size:16px}
+  td.q .rf{font-size:13.5px;margin-top:3px}
+  td.cell{height:62px}
+  td.cell .c{width:48px;height:32px;font-size:17px}
+  td.cell .c.small{font-size:13px}
+  td.cell .dot{width:7px;height:7px;right:5px;top:5px}
+  tr.sec td{font-size:12px;height:26px;padding:4px 12px}
+  .gridnote{font-size:14px;padding-top:10px}
+  #s-grid .head .detail{max-width:900px}
+}
+/* wide and not tall (iPad landscape, Mac): the whole run on one screen, title and nav beside the table */
+@media (min-width:1100px) and (max-height:1100px){
+  body[data-screen="s-grid"] .app{max-width:1640px}
+  #s-grid.on{display:grid;grid-template-columns:340px minmax(0,1fr);grid-template-rows:auto auto 1fr;grid-template-areas:"head table" "note table" "foot table";column-gap:36px;align-content:start;padding:24px 36px 20px}
+  #s-grid .head{grid-area:head;padding:6px 0 0;text-align:left}
+  #s-grid .head .detail{max-width:none}
+  #s-grid .gridwrap{grid-area:table;margin:0;align-self:start}
+  #s-grid .gridnote{grid-area:note;text-align:left;padding:14px 0 0}
+  #s-grid .foot{grid-area:foot;align-self:end;padding:14px 0 0}
+}
+@media (min-width:1100px) and (max-height:900px){
+  th.q{width:230px}
+  th.m{height:56px;padding-bottom:6px}
+  th.m button{font-size:13px}
+  td.q{padding:4px 6px 4px 10px}
+  td.q .n{font-size:14.5px}
+  td.q .rf{font-size:12.5px;margin-top:2px}
+  td.cell{height:50px}
+  td.cell .c{width:42px;height:29px;font-size:15.5px}
+  td.cell .c.small{font-size:12px}
+  tr.sec td{font-size:11px;height:22px;padding:3px 10px}
 }
 </style>
 </head>
@@ -467,6 +542,7 @@ function dateWords(iso){ try{ const d=new Date(iso); return d.toLocaleDateString
 // ---------- screens ----------
 function show(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on', s.id===id));
+  document.body.setAttribute('data-screen', id);
   window.scrollTo(0,0);
 }
 function renderCover(){
@@ -581,14 +657,16 @@ function sheetModel(mi){
       ${a.caveat?`<p><b>Caveat:</b> ${esc(a.caveat)}</p>`:''}
       ${st?`<div class="st">${st}</div>`:''}</div>`;
   }
-  openSheet(`<div class="sh"><h2>${esc(m.name)}</h2><button class="close" data-act="close">Close</button></div><div class="mid">${esc(m.id)} · question ${idx+1}: ${esc(q.title)}</div>${cards}<p class="note" style="font-size:12px;color:var(--ink3);line-height:1.45;margin-top:4px">Sources are as the model wrote them. Some do not exist; none were checked by the page.</p>`);
+  openSheet(`<div class="sh"><h2>${esc(m.name)}</h2><button class="close" data-act="close">Close</button></div><div class="mid">${esc(m.id)} · question ${idx+1}: ${esc(q.title)}</div><div class="runcards">${cards}</div><p class="sheetnote">Sources are as the model wrote them. Some do not exist; none were checked by the page.</p>`);
 }
 function sheetSources(){
-  const groups = {US:'US guidance', UK:'UK guidance', Other:'Other guidance and commentary'};
-  let html = `<div class="sh"><h2>Sources</h2><button class="close" data-act="close">Close</button></div><ul class="srcs">`;
-  Object.keys(groups).forEach(g => { html += `<h3>${groups[g]}</h3>`;
-    Object.keys(SOURCES).filter(k=>SOURCES[k].side===g).forEach(k => { const s=SOURCES[k]; html += `<li><b>${esc(s.n)}</b>${esc(s.t)}<br><a href="${s.u}" target="_blank" rel="noopener">${esc(s.u)}</a></li>`; }); });
-  html += `</ul><p class="note" style="font-size:12px;color:var(--ink3);margin-top:12px;line-height:1.45">The reference lines are the author’s reading of these documents in September 2026. Guidance in this field changes quickly; check the originals. The questions were put to the models in British English, which may nudge a model towards UK sources; the models were free to name US, UK, other or no guidance.</p>`;
+  const groups = [['US','us','US guidance'],['UK','uk','UK guidance'],['Other','other','Other guidance and commentary']];
+  let html = `<div class="sh"><h2>Sources</h2><button class="close" data-act="close">Close</button></div><div class="srcgrid">`;
+  groups.forEach(([g,cls,label], gi) => { if(gi===1) html += `<div class="srccol">`;
+    html += `<section class="srcgroup ${cls}"><div class="gtag">${label}</div><ul class="srcs">`;
+    Object.keys(SOURCES).filter(k=>SOURCES[k].side===g).forEach(k => { const s=SOURCES[k]; html += `<li><b>${esc(s.n)}</b>${esc(s.t)}<br><a href="${s.u}" target="_blank" rel="noopener">${esc(s.u)}</a></li>`; });
+    html += `</ul></section>`; });
+  html += `</div></div><p class="sheetnote">The reference lines are the author’s reading of these documents in September 2026. Guidance in this field changes quickly; check the originals. The questions were put to the models in British English, which may nudge a model towards UK sources; the models were free to name US, UK, other or no guidance.</p>`;
   openSheet(html);
 }
 
