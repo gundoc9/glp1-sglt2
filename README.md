@@ -21,14 +21,15 @@ The page is one file with no server. Open `index.html#setup`, paste an OpenRoute
 - `index.html`: the page.
 - `glp1-sglt2-card.png`: the social card (1200 × 630).
 - `glp1-sglt2-icon-180.png`: the icon.
+- `glp1-sglt2-run-2026-09-25.json`: the run of 25 September 2026, the same answers as built into the page.
 
 ## Sources
 
-The reference lines draw on: the FDA 2020 label change for SGLT2 inhibitors; ADA Standards of Care 2026, section 16; the 2024 ACC/AHA perioperative guideline; the SPAQI 2026 SGLT2 inhibitor consensus (Oprea et al., Br J Anaesth 2026); the SPAQI 2025 GLP-1 consensus (Oprea et al., Br J Anaesth 2025); the 2024 multisociety GLP-1 guidance (Kindel et al.); the ASA 2023 consensus-based guidance; the UK multidisciplinary consensus (El-Boghdadly et al., Anaesthesia 2025); and the Dhatariya, Levy and El-Boghdadly 2026 letter in Anaesthesia. Full citations and links are in the page's Sources sheet.
+The reference lines draw on: the FDA 2020 label change for SGLT2 inhibitors; ADA Standards of Care 2026, section 16; the 2024 AHA/ACC perioperative guideline; the SPAQI 2026 SGLT2 inhibitor consensus (Oprea et al., Br J Anaesth 2026); the SPAQI 2025 GLP-1 consensus (Oprea et al., Br J Anaesth 2025); the 2024 multisociety GLP-1 guidance (Kindel et al.); the ASA 2023 consensus-based guidance; the UK multidisciplinary consensus (El-Boghdadly et al., Anaesthesia 2025); and the Dhatariya, Levy and El-Boghdadly 2026 letter in Anaesthesia. Full citations and links are in the page's Sources sheet.
 
 ## Method notes
 
-Each question went to each model three times through OpenRouter, at the models' default settings, asking for one JSON object: a number (or none), whose guidance the answer follows (US, UK, other or none), the source named, one caveat and a one-line answer. The questions were written in British English, which may nudge a model towards UK sources. Sources are shown as the models wrote them; some do not exist and none were checked by the page.
+Each question went to each model three times through OpenRouter, at the models' default settings apart from reasoning effort, set to low, and a cap of 8,000 tokens per reply, asking for one JSON object: a number (or none), whose guidance the answer follows (US, UK, other or none), the source named, one caveat and a one-line answer. The questions were written in British English, which may nudge a model towards UK sources. Sources are shown as the models wrote them; some do not exist and none were checked by the page.
 
 Answers are what six models said on the run date. They are not advice.
 
